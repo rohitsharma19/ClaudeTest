@@ -1,0 +1,34 @@
+{
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-3.5-turbo",
+    "api_key": "",
+    "base_url": ""
+  },
+  "embeddings": {
+    "provider": "openai",
+    "model": "text-embedding-ada-002",
+    "api_key": ""
+  },
+  "vector_db": {
+    "type": "chromadb",
+    "persist_directory": "./data/vectordb"
+  },
+  "chunking": {
+    "chunk_size": 1000,
+    "chunk_overlap": 200
+  },
+  "retrieval": {
+    "top_k": 5
+  },
+  "system_prompt": "You are a helpful assistant that answers questions based on the provided context. Always cite the source documents when answering. If you cannot find the answer in the context, say so clearly.",
+  "authentication": {
+    "username": "admin",
+    "password": "admin123"
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "log_file_path": "./logs/app.log"
+  }
+}

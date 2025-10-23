@@ -30,7 +30,8 @@ rag-application/
 ├── backend/
 │   ├── app.py                    # Flask app initialization
 │   ├── config/
-│   │   ├── config.json           # Configuration file
+│   │   ├── config.json           # Configuration file (user's copy)
+│   │   ├── config.example.json   # Configuration template
 │   │   └── config_manager.py     # Configuration manager
 │   ├── managers/
 │   │   ├── llm_manager.py        # LLM providers
@@ -96,7 +97,16 @@ pip install -r requirements.txt
 
 ### 4. Configure the Application
 
-Edit `backend/config/config.json` to configure your LLM provider, embeddings, and other settings.
+The application includes a template configuration file. You can either:
+
+**Option 1**: Use the existing `backend/config/config.json` file and add your API keys directly.
+
+**Option 2**: Copy the template and customize it:
+```bash
+cp backend/config/config.example.json backend/config/config.json
+```
+
+Then edit `backend/config/config.json` to add your API keys and configure your preferred LLM provider, embeddings, and other settings.
 
 **Important**: Add your API keys to the configuration file or set them as environment variables.
 
